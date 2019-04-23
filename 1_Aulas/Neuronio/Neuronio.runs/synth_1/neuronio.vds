@@ -1,0 +1,381 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Apr 18 09:39:51 2019
+# Process ID: 3355
+# Current directory: /home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.runs/synth_1
+# Command line: vivado -log neuronio.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source neuronio.tcl
+# Log file: /home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.runs/synth_1/neuronio.vds
+# Journal file: /home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source neuronio.tcl -notrace
+Command: synth_design -top neuronio -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 3376 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1350.363 ; gain = 0.000 ; free physical = 1016 ; free virtual = 11553
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'neuronio' [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/new/neuronio.vhd:40]
+INFO: [Synth 8-3491] module 'multiplierfsm_v2' declared at '/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/multiplierfsm_v2.vhd:26' bound to instance 'mul' of component 'multiplierfsm_v2' [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/new/neuronio.vhd:59]
+INFO: [Synth 8-638] synthesizing module 'multiplierfsm_v2' [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/multiplierfsm_v2.vhd:36]
+WARNING: [Synth 8-614] signal 's_mul_man' is read in the process but is not in the sensitivity list [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/multiplierfsm_v2.vhd:64]
+WARNING: [Synth 8-614] signal 's_add_exp' is read in the process but is not in the sensitivity list [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/multiplierfsm_v2.vhd:64]
+INFO: [Synth 8-256] done synthesizing module 'multiplierfsm_v2' (1#1) [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/multiplierfsm_v2.vhd:36]
+INFO: [Synth 8-3491] module 'multiplierfsm_v2' declared at '/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/multiplierfsm_v2.vhd:26' bound to instance 'mul' of component 'multiplierfsm_v2' [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/new/neuronio.vhd:59]
+INFO: [Synth 8-3491] module 'multiplierfsm_v2' declared at '/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/multiplierfsm_v2.vhd:26' bound to instance 'mul' of component 'multiplierfsm_v2' [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/new/neuronio.vhd:59]
+INFO: [Synth 8-3491] module 'multiplierfsm_v2' declared at '/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/multiplierfsm_v2.vhd:26' bound to instance 'mul' of component 'multiplierfsm_v2' [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/new/neuronio.vhd:59]
+INFO: [Synth 8-3491] module 'addsubfsm_v6' declared at '/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/addsubfsm_v6.vhd:17' bound to instance 'add0' of component 'addsubfsm_v6' [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/new/neuronio.vhd:69]
+INFO: [Synth 8-638] synthesizing module 'addsubfsm_v6' [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/addsubfsm_v6.vhd:28]
+WARNING: [Synth 8-6014] Unused sequential element sl_reg was removed.  [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/addsubfsm_v6.vhd:118]
+WARNING: [Synth 8-6014] Unused sequential element sign_reg was removed.  [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/addsubfsm_v6.vhd:200]
+WARNING: [Synth 8-6014] Unused sequential element s_res_exp_reg was removed.  [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/addsubfsm_v6.vhd:201]
+WARNING: [Synth 8-6014] Unused sequential element out_man_reg was removed.  [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/addsubfsm_v6.vhd:202]
+WARNING: [Synth 8-6014] Unused sequential element pos_reg was removed.  [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/addsubfsm_v6.vhd:226]
+INFO: [Synth 8-256] done synthesizing module 'addsubfsm_v6' (2#1) [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/addsubfsm_v6.vhd:28]
+INFO: [Synth 8-3491] module 'addsubfsm_v6' declared at '/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/addsubfsm_v6.vhd:17' bound to instance 'add1' of component 'addsubfsm_v6' [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/new/neuronio.vhd:79]
+INFO: [Synth 8-3491] module 'addsubfsm_v6' declared at '/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/addsubfsm_v6.vhd:17' bound to instance 'add2' of component 'addsubfsm_v6' [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/new/neuronio.vhd:89]
+INFO: [Synth 8-3491] module 'addsubfsm_v6' declared at '/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/addsubfsm_v6.vhd:17' bound to instance 'add3' of component 'addsubfsm_v6' [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/new/neuronio.vhd:99]
+INFO: [Synth 8-256] done synthesizing module 'neuronio' (3#1) [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/new/neuronio.vhd:40]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1367.617 ; gain = 17.254 ; free physical = 1056 ; free virtual = 11559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1367.617 ; gain = 17.254 ; free physical = 1033 ; free virtual = 11536
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1375.621 ; gain = 25.258 ; free physical = 1031 ; free virtual = 11534
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/addsubfsm_v6.vhd:170]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/addsubfsm_v6.vhd:170]
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'addsubfsm_v6'
+INFO: [Synth 8-5544] ROM "update" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ready_as" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "update" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ready_as" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "oper" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "pos" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.srcs/sources_1/imports/operadorFloatingPoint/multiplierfsm_v2.vhd:129]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 waiting |                              001 |                               00
+                  addsub |                              010 |                               01
+                  output |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'addsubfsm_v6'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1383.629 ; gain = 33.266 ; free physical = 998 ; free virtual = 11484
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     20 Bit       Adders := 4     
+	   3 Input      9 Bit       Adders := 8     
+	   3 Input      8 Bit       Adders := 12    
+	   2 Input      8 Bit       Adders := 4     
++---XORs : 
+	   2 Input      1 Bit         XORs := 8     
++---Registers : 
+	               27 Bit    Registers := 9     
+	               20 Bit    Registers := 4     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 6     
+	   4 Input     27 Bit        Muxes := 4     
+	   2 Input     20 Bit        Muxes := 8     
+	   2 Input     19 Bit        Muxes := 32    
+	   2 Input     18 Bit        Muxes := 8     
+	   2 Input      9 Bit        Muxes := 4     
+	   2 Input      8 Bit        Muxes := 24    
+	   3 Input      3 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 4     
+	   6 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 116   
+	   8 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module neuronio 
+Detailed RTL Component Info : 
++---Registers : 
+	               27 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 2     
+Module addsubfsm_v6 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     20 Bit       Adders := 1     
+	   3 Input      8 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               27 Bit    Registers := 1     
+	               20 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 2     
+	   2 Input     19 Bit        Muxes := 8     
+	   2 Input      8 Bit        Muxes := 5     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 29    
+	   8 Input      1 Bit        Muxes := 1     
+Module multiplierfsm_v2 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      9 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               27 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     27 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 2     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: Generating DSP multOp, operation Mode is: A*B.
+DSP Report: operator multOp is absorbed into DSP multOp.
+DSP Report: operator multOp is absorbed into DSP multOp.
+INFO: [Synth 8-3886] merging instance 'saida_reg[25]' (FDCE) to 'saida_reg[26]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\saida_reg[26] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1556.363 ; gain = 206.000 ; free physical = 867 ; free virtual = 11373
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name      | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|multiplierfsm_v2 | A*B         | 20     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|multiplierfsm_v2 | A*B         | 20     | 18     | -      | -      | 38     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|multiplierfsm_v2 | A*B         | 20     | 18     | -      | -      | 38     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|multiplierfsm_v2 | A*B         | 20     | 18     | -      | -      | 38     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++-----------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1556.363 ; gain = 206.000 ; free physical = 869 ; free virtual = 11375
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 1556.363 ; gain = 206.000 ; free physical = 872 ; free virtual = 11379
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1556.363 ; gain = 206.000 ; free physical = 872 ; free virtual = 11379
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1556.363 ; gain = 206.000 ; free physical = 872 ; free virtual = 11379
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1556.363 ; gain = 206.000 ; free physical = 872 ; free virtual = 11379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1556.363 ; gain = 206.000 ; free physical = 872 ; free virtual = 11379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1556.363 ; gain = 206.000 ; free physical = 872 ; free virtual = 11379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1556.363 ; gain = 206.000 ; free physical = 872 ; free virtual = 11379
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |   136|
+|3     |DSP48E1 |     4|
+|4     |LUT1    |    12|
+|5     |LUT2    |   248|
+|6     |LUT3    |   283|
+|7     |LUT4    |   504|
+|8     |LUT5    |   286|
+|9     |LUT6    |   662|
+|10    |FDCE    |    26|
+|11    |FDRE    |   317|
+|12    |FDSE    |     4|
+|13    |IBUF    |   246|
+|14    |OBUF    |    28|
++------+--------+------+
+
+Report Instance Areas: 
++------+--------------------+-------------------+------+
+|      |Instance            |Module             |Cells |
++------+--------------------+-------------------+------+
+|1     |top                 |                   |  2757|
+|2     |  add0              |addsubfsm_v6       |   252|
+|3     |  add1              |addsubfsm_v6_0     |   368|
+|4     |  add2              |addsubfsm_v6_1     |   467|
+|5     |  add3              |addsubfsm_v6_2     |   178|
+|6     |  \mult_gen[0].mul  |multiplierfsm_v2   |   239|
+|7     |  \mult_gen[1].mul  |multiplierfsm_v2_3 |   353|
+|8     |  \mult_gen[2].mul  |multiplierfsm_v2_4 |   238|
+|9     |  \mult_gen[3].mul  |multiplierfsm_v2_5 |   353|
++------+--------------------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1556.363 ; gain = 206.000 ; free physical = 872 ; free virtual = 11379
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1556.363 ; gain = 206.000 ; free physical = 876 ; free virtual = 11383
+Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1556.371 ; gain = 206.000 ; free physical = 876 ; free virtual = 11383
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 140 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1609.375 ; gain = 0.000 ; free physical = 788 ; free virtual = 11310
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+36 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1609.375 ; gain = 259.258 ; free physical = 843 ; free virtual = 11365
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1609.375 ; gain = 0.000 ; free physical = 843 ; free virtual = 11365
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/GitHub/Projeto-de-Circuitos-Reconfiguraveis/1_Aulas/Neuronio/Neuronio.runs/synth_1/neuronio.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file neuronio_utilization_synth.rpt -pb neuronio_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 18 09:40:13 2019...
