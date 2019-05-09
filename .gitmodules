@@ -1,0 +1,3 @@
+[submodule "Autotrac"]
+	path = Autotrac
+	url = https://github.com/ArthurFariaCampos/Autotrac.git
