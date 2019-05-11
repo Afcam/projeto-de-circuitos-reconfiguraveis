@@ -15,26 +15,3 @@ onde,
   * $\sigma^2_{k}$ é o erro de covariância associado ao sensor de ultrassom no instante k.
   * $\sigma^2_{k+1}$ é o erro de covariância da fusão no instante de tempo k+1.
   * $G_{k+1}$ é conhecido como Ganho do filtro e é calculado a cada instante de tempo k
-
-## Diagrama de Blocos
-
-![grafico](Imagens/arquitetura2.jpg)
-
-![grafico](Imagens/schematic31.png)
-
-
-
-
-
-
-
-
-
-
-<!-- <p>Este é um parágrafo.</p>
-<p>Este é outro parágrafo.</p>
-
-Javascript é _cool_! -->
-<!-- - [x] Finish my changes
-- [ ] Push my commits to GitHub
-- [ ] Open a pull request -->
