@@ -22,6 +22,7 @@ entity top_module is
            reset_in : in STD_LOGIC;
            start_in : in STD_LOGIC;
             sw_in   : in  STD_LOGIC;
+          addr_in   : in STD_LOGIC_VECTOR (6 downto 0);
            led_out : out STD_LOGIC_VECTOR (15 downto 0));
 end top_module;
 
@@ -44,21 +45,22 @@ architecture Behavioral of top_module is
   );
   end component RoboMovel;
 
-  COMPONENT ROM_xir
+  component Memory_Xir
     PORT (
       clka : IN STD_LOGIC;
       addra : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
       douta : OUT STD_LOGIC_VECTOR(26 DOWNTO 0)
     );
-  END COMPONENT;
+  END component;
 
-  COMPONENT ROM_xul
-  PORT (
-    clka : IN STD_LOGIC;
-    addra : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
-    douta : OUT STD_LOGIC_VECTOR(26 DOWNTO 0)
-  );
-END COMPONENT;
+
+  component Memory_Xul
+    PORT (
+      clka : IN STD_LOGIC;
+      addra : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+      douta : OUT STD_LOGIC_VECTOR(26 DOWNTO 0)
+    );
+  end component;
 
 
   signal xir     : STD_LOGIC_VECTOR (26 downto 0):= (others => '0');
@@ -67,7 +69,6 @@ END COMPONENT;
   signal xfusao_out : STD_LOGIC_VECTOR (26 downto 0):= (others => '0');
 
   signal  addra :  STD_LOGIC_VECTOR(6 DOWNTO 0):= (others => '0');
-  signal  douta :  STD_LOGIC_VECTOR(26 DOWNTO 0):= (others => '0');
 
 
 --=============================================================================
@@ -86,38 +87,39 @@ begin
     xfusao_out => xfusao_out
   );
 
-  ROM_ir : ROM_xir
-    PORT MAP (
-      clka => clock_in,
-      addra => addra,
-      douta => xir
-    );
+  Mem_XIR : Memory_Xir
+  PORT MAP (
+    clka => clock_in,
+    addra => addr_in,
+    douta => xir
+  );
 
-  ROM_ul : ROM_xul
-    PORT MAP (
-      clka => clock_in,
-      addra => addra,
-      douta => xul
-    );
+  Mem_XUL : Memory_Xul
+  PORT MAP (
+    clka => clock_in,
+    addra => addr_in,
+    douta => xul
+  );
 
 
-    Memory : process (reset_in, clock_in, start_in)
-  	begin
-  		if reset_in = '1' then
-  			addra <= (others => '0');
-  		elsif rising_edge(clock_in) then
-  			if start_in = '1' then
-          if  addra = "1100100" then
-            addra <= (others => '0');
-          else
-            addra <= addra + '1';
-          end if;
-  			end if;
-  		end if;
-  	end process Memory;
+
+    -- Memory : process (reset_in, clock_in, start_in)
+  	-- begin
+  	-- 	if reset_in = '1' then
+  	-- 		addra <= (others => '0');
+  	-- 	elsif rising_edge(clock_in) then
+  	-- 		if start_in = '1' then
+    --       if  addra = "1100100" then
+    --         addra <= (others => '0');
+    --       else
+    --         addra <= addra + '1';
+    --       end if;
+  	-- 		end if;
+  	-- 	end if;
+  	-- end process Memory;
 
     with sw_in select
-  		led_out <= xfusao_out(26 downto 9) when '0',
+  		led_out <= xfusao_out(26 downto 11) when '0',
   		xfusao_out(15 downto 0) when others;
 
 

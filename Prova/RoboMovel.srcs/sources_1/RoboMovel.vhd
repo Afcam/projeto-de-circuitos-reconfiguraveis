@@ -73,9 +73,13 @@ architecture Rtl of RoboMovel is
 		);
 	end component Fusao;
 
-	signal ready_ganho : STD_LOGIC                      := '0';
+	signal ready_out_ganho : STD_LOGIC                      := '0';
+	signal ready_out_erro  : STD_LOGIC                      := '0';
+	signal ready_out_fusao : STD_LOGIC                      := '0';
+
 	signal ready_erro  : STD_LOGIC                      := '0';
 	signal ready_fusao : STD_LOGIC                      := '0';
+
 	signal gain        : STD_LOGIC_VECTOR (26 downto 0) := (others => '0');
 
 	signal covK        : STD_LOGIC_VECTOR (26 downto 0) := (others => '0');
@@ -93,7 +97,7 @@ begin
 		start_in  => start_in,
 		covZ_in   => "001111110000000000000000000", --! 0.5
 		covK_in   => covK,
-		ready_out => ready_ganho,
+		ready_out => ready_out_ganho,
 		ganho_out => gain
 	);
 
@@ -101,11 +105,11 @@ begin
 	port map(
 		clock_in   => clock_in,
 		reset_in   => reset_in,
-		start_in   => ready_ganho,
+		start_in   => ready_out_ganho,
 		xir_in     => xir_in,
 		xul_in     => xul_in,
 		ganho_in   => gain,
-		ready_out  => ready_fusao,
+		ready_out  => ready_out_fusao,
 		xfusao_out => xfusao_out
 	);
 
@@ -113,33 +117,81 @@ begin
 	port map(
 		clock_in  => clock_in,
 		reset_in  => reset_in,
-		start_in  => ready_fusao,
+		start_in  => ready_out_ganho,
 		ganho_in  => gain,
 		covK_in   => covK,
-		ready_out => ready_erro,
+		ready_out => ready_out_erro,
 		covK_out  => covK_new
 	);
 
+
 	--============================================================================
-	-- PROCESS Covariance
-	--! @param[in] reset_in: reset to constatn value of covK = 0.1
+	-- PROCESS updateReadyFusao
+	--! @brief It describes the operations realized in the states of the FSM.
+	--! @param[in] clock_in: Clock signal. Process triggered by rising edge.
+	--! @param[in] ready_out_fusao: Signal to set output
+	--! @param[in] start_in: Signal to reset the xfusao_out
+	--! Read: #clock_in, #ready_out_fusao, #start_in.
+	--! Update: #ready_fusao.
 	--============================================================================
-	Covariance : process (reset_in, clock_in)
+	-- updateReadyFusao : process (reset_in,clock_in, ready_out_fusao, start_in)
+	-- begin
+	-- 	if (reset_in = '1') or (start_in = '1') then
+	-- 		ready_fusao <= '0';
+	-- 	elsif rising_edge(clock_in) then
+	-- 		if ready_out_fusao = '1' then
+	-- 			ready_fusao <= '1';
+	-- 		end if;
+	-- 	end if;
+	-- end process updateReadyFusao;
+
+	--============================================================================
+	-- PROCESS updateReadyErro
+	--! @brief It describes the operations realized in the states of the FSM.
+	--! @param[in] clock_in: Clock signal. Process triggered by rising edge.
+	--! @param[in] ready_out_erro: Signal to set output
+	--! @param[in] start_in: Signal to reset the xfusao_out
+	--! Read: #clock_in, #ready_out_erro, #start_in.
+	--! Update: #ready_erro.
+	--============================================================================
+	updateReadyErro : process (reset_in, clock_in, ready_out_erro, start_in)
 	begin
-		if reset_in = '1' then
-			covK <= covK_init;
+		if (reset_in = '1') or (start_in = '1') then
+			ready_erro <= '0';
 		elsif rising_edge(clock_in) then
-			if ready_erro = '1' then
-				covK <= covK_new;
-				-- else
-				--   covK <= covk;
+			if ready_out_erro = '1' then
+				ready_erro <= '1';
 			end if;
 		end if;
-	end process Covariance;
-	--
-	-- -- ready_out<= ready_erro and ready_fusao ;
-	ready_out <= ready_erro;
+	end process updateReadyErro;
+
+	--============================================================================
+	-- PROCESS updateReadyErro
+	--! @brief It describes the operations realized in the states of the FSM.
+	--! @param[in] clock_in: Clock signal. Process triggered by rising edge.
+	--! @param[in] ready_fusao: Signal to set output.
+	--! @param[in] ready_erro: Signal to set output.
+	--! @param[in] start_in: Signal to reset the xfusao_out.
+	--! @param[in] reset_in: Asynchronous reset. When it is high, the system is
+	--!                      initialized.
+	--! Read: #clock_in, #ready_fusao, #ready_erro, #start_in.
+	--! Update: #ready_out, #covK.
+	--============================================================================
+	updatefusao_out : process (reset_in, clock_in, ready_fusao, ready_erro, start_in,ready_out_fusao)
+	begin
+		if (reset_in = '1') then
+			covK <= covK_init;
+			-- ready_out   <= '0';
+		elsif rising_edge(clock_in) then
+			if (ready_out_fusao = '1') then
+				-- ready_out <= '1';
+				covK <= covK_new;
+			end if;
+		end if;
+	end process updatefusao_out;
+ready_out<=  ready_out_fusao;
+-- covK <= covK_new;
 end Rtl;
---=============================================================================
+-- --=============================================================================
 -- architecture end
 --=============================================================================
