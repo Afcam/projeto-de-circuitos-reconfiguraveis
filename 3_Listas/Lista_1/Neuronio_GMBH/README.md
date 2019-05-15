@@ -1,9 +1,8 @@
 # Exercício 3. Projeto usando IP-Cores dos operadores em ponto flutuante.
 Usando os operadores aritméticos em ponto flutuante de 27 bits, implemente em hardware o modelo matemático de um neurônio GMBH de segunda ordem e mapeie a sua solução no kit de desenvolvimento Basys3.
 
-\begin{equation} \begin{bmatrix} x & \dot{x} & \theta & \dot{\theta} & L & m & M \end{bmatrix} \end{equation}
 
-$$saida = f(x) = ax2 + bx + c$$
+> saida = f(x) = ax2 + bx + c
 
 No Matlab/Octave implemente um modelo de referência do neurônio. Crie 100 valores aleatórios para a entrada. Os parâmetros a, b e c devem ser declarados como constantes em VHDL. Realize a simulação comportamental e estime o erro quadrático médio da solução em hardware.
 
